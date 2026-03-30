@@ -26,7 +26,17 @@ Website pemantauan lokasi petugas kebersihan Melati dan Bestari di Kecamatan Med
 1. Push kode ke GitHub
 2. Daftar/Login ke [Vercel](https://vercel.com)
 3. Import project dari GitHub
-4. Deploy otomatis
+4. Vercel akan otomatis mendeteksi Next.js dan deploy
+
+### Troubleshooting Build Error
+
+Jika mendapat error "No Output Directory named 'public' found":
+- Pastikan folder `public` ada (sudah dibuat otomatis)
+- File `vercel.json` sudah dikonfigurasi untuk framework Next.js
+- Jika masih error, cek Project Settings di Vercel:
+  - Framework Preset: Next.js
+  - Build Command: `npm run build`
+  - Output Directory: `.next`
 
 ## Setup Supabase
 
