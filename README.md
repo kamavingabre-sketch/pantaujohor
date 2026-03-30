@@ -1,49 +1,54 @@
-# PantauJohor
+# Pantau Johor
 
-Website landing page untuk pemantauan lokasi petugas kebersihan Melati dan Bestari di Kecamatan Medan Johor.
+Website pemantauan lokasi petugas kebersihan Melati dan Bestari di Kecamatan Medan Johor.
 
 ## Teknologi
-- HTML / CSS / JavaScript
-- Tema warna: biru, merah, putih
-- Rencana deploy: Vercel (fitur statis) / Next.js upgrade nanti
-- Rencana data: Supabase
 
-## Struktur
-- `index.html` - halaman utama
-- `styles.css` - gaya visual
-- `script.js` - logika frontend (placeholder)
+- **Frontend**: Next.js dengan Tailwind CSS
+- **Deployment**: Vercel
+- **Database**: Supabase
 
-## Jalankan lokal
-1. Buka `index.html` di browser
-2. Atau jalankan server static sederhana:
+## Setup Lokal
 
-```bash
-cd /home/phun/Desktop/pantaujohor
-python3 -m http.server 8000
-```
+1. Clone repository ini
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Jalankan development server:
+   ```bash
+   npm run dev
+   ```
+4. Buka [http://localhost:3000](http://localhost:3000) di browser
 
 ## Deploy ke Vercel
-1. Buat project baru di Vercel.
-2. Hubungkan ke repositori GitHub atau upload folder `pantaujohor`.
-3. Set build command: tidak perlu (static) atau `npm run build` jika Next.js.
-4. Output directory: `.` (root folder) jika static.
 
-## Integrasi Supabase (rencana)
-1. Buat project di https://app.supabase.com
-2. buat tabel `petugas`, `lokasi`, `riwayat`
-3. Tambahkan key API di frontend/backend dan gunakan SDK:
+1. Push kode ke GitHub
+2. Daftar/Login ke [Vercel](https://vercel.com)
+3. Import project dari GitHub
+4. Deploy otomatis
 
-```js
-import { createClient } from '@supabase/supabase-js'
-const supabaseUrl = 'https://your-project.supabase.co'
-const supabaseKey = 'PUBLIC_ANON_KEY'
-const supabase = createClient(supabaseUrl, supabaseKey)
-```
+## Setup Supabase
 
-4. Simpan lokasi GPS petugas dan panggil data ke tampilan peta.
+1. Buat akun di [Supabase](https://supabase.com)
+2. Buat project baru
+3. Copy URL dan anon key dari project settings
+4. Buat file `.env.local`:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+5. Untuk fitur data, akan ditambahkan nanti
 
-## Fitur selanjutnya
-- Peta interaktif (Google Maps / Leaflet)
-- Autentikasi petugas (login)
-- Rute harian dan statistik area
-- Notifikasi tugas selesai
+## Warna Tema
+
+- Biru: #0033A0
+- Merah: #D52B1E
+- Putih: #FFFFFF
+
+## Fitur Kedepan
+
+- Real-time tracking lokasi petugas
+- Dashboard admin
+- Laporan aktivitas
+- Notifikasi
